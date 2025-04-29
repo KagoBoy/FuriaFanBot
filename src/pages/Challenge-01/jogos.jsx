@@ -1,8 +1,9 @@
 import BackgroundLights from "../../components/BackgroundLights";
 import ChatBot from "../../components/ChatBot/ChatBot";
-import FuriaMatchesSummary from "../../components/MatchInfo/FuriaMatchs";
+import MatchInfo from "../../components/MatchInfo/MatchInfo";
 
-export default function Home() {
+
+export default function TelaJogos() {
   return (
     <div className="relative bg-black min-h-screen overflow-hidden flex items-center justify-center">
       {/* Brilhos de fundo */}
@@ -21,15 +22,15 @@ export default function Home() {
             <ul className="flex gap-8 text-xl">
               <li>
                 <a
-                  className=" hover:bg-yellow-400 rounded-lg p-2 transition duration-300 bg-yellow-500"
-                  href="/" 
+                  className=" hover:bg-yellow-500 rounded-lg p-2 transition duration-300"
+                  href="/"
                 >
                   Home
                 </a>
               </li>
               <li>
                 <a
-                  className=" hover:bg-yellow-500 rounded-lg p-2 transition duration-300"
+                  className=" hover:bg-yellow-400 rounded-lg p-2 transition duration-300 bg-yellow-500"
                   href="/jogos"
                 >
                   Jogos
@@ -57,24 +58,10 @@ export default function Home() {
 
         <main className="flex flex-col items-center gap-8">
           <h1 className="text-5xl font-bold text-purple-400 text-center">
-            Bem-vindo, FURIA Lover!
+            Resultados das Partidas FURIOSAS!
           </h1>
-
-          <FuriaMatchesSummary/>
-
           
-
-          {/* Botões */}
-          <div className="flex gap-6 mt-8">
-            <button className="bg-purple-700 hover:bg-purple-500 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-purple-700/50 cursor-pointer">
-              Começar Quiz
-            </button>
-            <button className="bg-yellow-500 hover:bg-yellow-400 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-yellow-700/50 cursor-pointer">
-              Ver Ranking
-            </button>
-          </div>
-
-          
+          <MatchInfo />
           {/* Chatbot */}
           <div className="p-4 mt-10 flex flex-col w-80 h-50">
             <ChatBot />
