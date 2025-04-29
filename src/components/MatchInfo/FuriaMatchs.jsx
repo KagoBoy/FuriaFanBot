@@ -41,7 +41,6 @@ const FuriaMatchesSummary = () => {
   const processLastMatch = (match) => {
     if (!match) return null;
     
-    // Calcula os scores corretamente (substitua 0 e 2 pelos valores reais conforme sua API)
     const team1Score = match.results?.find(r => r.team_id === match.furia_id)?.score || '0';
     const team2Score = match.results?.find(r => r.team_id === match.opponents?.find(o => !o.opponent.name.includes('FURIA'))?.opponent.id)?.score || '0';
     
@@ -52,7 +51,6 @@ const FuriaMatchesSummary = () => {
       team2_score: team2Score,
       date: formatMatchDate(match.begin_at),
       tournament: match.serie?.name || 'Torneio',
-      // Adicionado placar formatado
       formatted_score: `${team1Score}x${team2Score}`
     };
   };
@@ -78,7 +76,6 @@ const FuriaMatchesSummary = () => {
           <div className="flex-1 border-2 border-purple-500 rounded-lg p-3 bg-gray-800">
             <h3 className="text-xs font-semibold text-purple-300 mb-1">ÚLTIMO RESULTADO</h3>
             <div className="flex flex-col">
-              {/* Times e placar na mesma linha */}
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xl font-bold">{lastMatch.team1}</span>
                 <span className="text-2xl font-extrabold bg-gradient-to-r from-purple-500 to-purple-300 text-transparent bg-clip-text px-4">
@@ -86,7 +83,6 @@ const FuriaMatchesSummary = () => {
                 </span>
                 <span className="text-xl font-bold">{lastMatch.team2}</span>
               </div>
-              {/* Informações abaixo em linha única */}
               <div className="flex flex-col justify-between text-sm text-gray-400">
                 <span>{lastMatch.date}</span>
                 <span>{lastMatch.tournament}</span>

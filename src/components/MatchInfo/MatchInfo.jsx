@@ -77,13 +77,11 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
 
   return (
     <div className="bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden mb-4">
-      {/* Cabeçalho clicável - Parte ajustada */}
       <div 
         className="p-4 hover:bg-gray-800 cursor-pointer transition-colors duration-200"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-center">
-          {/* Time 1 - Largura fixa */}
           <div className={`flex items-center space-x-3 ${winnerId === team1.id ? 'text-green-400' : 'text-white'} w-2/5`}>
             <img 
               src={team1.image_url} 
@@ -97,7 +95,6 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
             </div>
           </div>
 
-          {/* Container central - Agora perfeitamente centralizado */}
           <div className="flex flex-col items-center justify-center w-1/5 px-2">
             <div className="bg-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-1">MD3</div>
             <div className="text-lg font-bold text-gray-300">VS</div>
@@ -111,7 +108,6 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
             </svg>
           </div>
 
-          {/* Time 2 - Largura fixa */}
           <div className={`flex items-center justify-end space-x-3 ${winnerId === team2.id ? 'text-green-400' : 'text-white'} w-2/5`}>
             <div className="min-w-0 text-right">
               <div className="font-semibold truncate">{team2.name}</div>
@@ -127,23 +123,19 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
         </div>
       </div>
 
-      {/* Conteúdo expandido - Mantido EXATAMENTE como estava */}
       {isExpanded && (
         <div className="px-4 pb-4 space-y-4">
-          {/* Informações do torneio */}
           <div className="border-t border-gray-700 pt-3">
             <h2 className="text-lg font-bold text-gray-300">{tournamentName}</h2>
             <div className="text-sm text-gray-400">Data: {matchDate.date} às {matchDate.time}</div>
           </div>
 
-          {/* Vencedor */}
           {isFinished && winnerInfo && (
             <div className="bg-green-900/30 text-green-400 text-sm p-2 rounded text-center">
               {winnerInfo}
             </div>
           )}
-
-          {/* Detalhes das partidas */}
+          
           {games?.length > 0 && (
             <div className="bg-gray-800 p-3 rounded-lg">
               <h3 className="font-bold text-gray-300 mb-2">Detalhes das partidas:</h3>
