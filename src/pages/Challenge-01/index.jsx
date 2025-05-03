@@ -1,5 +1,5 @@
 import BackgroundLights from "../../components/BackgroundLights";
-import ChatBot from "../../components/ChatBot/ChatBot";
+import FuriaChatbot from "../../components/ChatBot/ChatBot";
 import FuriaMatchesSummary from "../../components/MatchInfo/FuriaMatchs";
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
           </nav>
         </header>
 
-        <main className="flex flex-col items-center gap-8">
+        <main className="flex flex-col items-center gap-8 min-h-[70vh]">
           <h1 className="text-5xl font-bold text-purple-400 text-center">
             Bem-vindo, FURIA Lover!
           </h1>
@@ -66,10 +66,12 @@ export default function Home() {
 
           {/* Botões */}
           <div className="flex gap-6 mt-8">
-            <button className="bg-purple-700 hover:bg-purple-500 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-purple-700/50 cursor-pointer">
+            <button className="bg-purple-700 hover:bg-purple-500 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-purple-700/50 cursor-pointer"
+            onClick={() => window.location.href = "/quiz"}>
               Começar Quiz
             </button>
-            <button className="bg-yellow-500 hover:bg-yellow-400 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-yellow-700/50 cursor-pointer">
+            <button className="bg-yellow-500 hover:bg-yellow-400 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-yellow-700/50 cursor-pointer"
+            onClick={() => window.location.href = "/ranking"}>
               Ver Ranking
             </button>
           </div>
@@ -77,7 +79,7 @@ export default function Home() {
           
           {/* Chatbot */}
           <div className="p-4 mt-10 flex flex-col w-80 h-50">
-            <ChatBot />
+            <FuriaChatbot />
           </div>
         </main>
       </div>

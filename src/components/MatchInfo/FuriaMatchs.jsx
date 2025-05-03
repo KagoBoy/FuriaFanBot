@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchMatches } from '../../services/api-jogos';
+import { fetchMatches, fetchUpcomingMatches } from '../../services/api-jogos';
 import { formatMatchDate, formatDay, formatTime } from '../../utils/dateFormatters';
 
 const FuriaMatchesSummary = () => {
@@ -7,6 +7,7 @@ const FuriaMatchesSummary = () => {
   const [nextMatch, setNextMatch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     const loadData = async () => {
@@ -18,16 +19,20 @@ const FuriaMatchesSummary = () => {
             sort: '-begin_at',
             limit: 1
           }),
-          fetchMatches({
+          fetchUpcomingMatches({
             team: 'FURIA',
-            status: 'not_started',
-            sort: 'begin_at',
             limit: 1
-          })
+          }).catch(() => [])
         ]);
 
         setLastMatch(processLastMatch(lastMatches[0]));
-        setNextMatch(processNextMatch(nextMatches[0]));
+        setNextMatch(nextMatches[0] ? processNextMatch(nextMatches[0]) : {
+          empty: true,
+          opponent: 'Nenhum jogo marcado',
+          day: '--',
+          time: '--:--',
+          tournament: 'Próximos jogos serão anunciados'
+        });
       } catch (err) {
         setError(err.message);
       } finally {
@@ -69,7 +74,7 @@ const FuriaMatchesSummary = () => {
   if (error) return <div className="text-center py-4 text-red-500">Erro: {error}</div>;
 
   return (
-    <div className="bg-gray-900 text-white p-4 rounded-lg shadow-lg max-w-2xl mx-auto border-2 border-purple-600">
+    <div className="bg-gray-900 text-white p-4 rounded-lg shadow-lg max-w-2xl mx-auto border-2 border-purple-600 ">
       <div className="flex flex-col md:flex-row gap-4">
         {/* Último Resultado - Card Roxo - Layout Atualizado */}
         {lastMatch && (
@@ -92,9 +97,14 @@ const FuriaMatchesSummary = () => {
         )}
 
         {/* Próximo Jogo - Card Dourado */}
-        {nextMatch && (
-          <div className="flex-1 border-2 border-yellow-500 rounded-lg p-3 bg-gray-800">
-            <h3 className="text-xs font-semibold text-yellow-300 mb-1">PRÓXIMO JOGO</h3>
+        <div className="flex-1 border-2 border-yellow-500 rounded-lg p-3 bg-gray-800">
+          <h3 className="text-xs font-semibold text-yellow-300 mb-1">PRÓXIMO JOGO</h3>
+          {nextMatch?.empty ? (
+            <div className="flex flex-col items-center justify-center h-full py-4">
+              <div className="text-lg text-gray-300">Nenhum jogo marcado</div>
+              <div className="text-sm text-gray-400 mt-1">Próximos jogos serão anunciados</div>
+            </div>
+          ) : nextMatch ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="text-lg font-bold bg-yellow-500 text-gray-900 px-2 py-1 rounded">
@@ -107,8 +117,8 @@ const FuriaMatchesSummary = () => {
                 <div className="text-xs text-gray-400">{nextMatch.tournament}</div>
               </div>
             </div>
-          </div>
-        )}
+          ) : null}
+        </div>
       </div>
     </div>
   );
