@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node api/index.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -22,7 +22,8 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.3",
     "tailwind": "^2.3.1",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "vercel": "^41.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
