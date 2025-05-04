@@ -45,7 +45,7 @@ const FuriaChatbot = () => {
       keywords: ["hist[oó]ria", "fundac[aã]ao", "origem", "come[cç]o", "in[ií]cio", "quando criaram"]
     },
     "jogadores": {
-      response: "👥 Elenco atual (2024):\n- KSCERATO (Ídolo)\n- yuurih (Fuzileiro)\n- FalleN (Lenda)\n- chelo\n- VINI\n\nTreinador: guerri\n\nQuer saber sobre algum específico?",
+      response: "👥 Elenco atual (2024):\n- KSCERATO (Ídolo)\n- yuurih (Fuzileiro)\n- FalleN (Lenda)\n- YEKINDAR\n- molodoy\n\nTreinador: sidde\n\nQuer saber sobre algum específico?",
       keywords: ["jogadores", "elenco", "time", "player", "roster", "equipe", "quem joga"]
     },
     "próximo jogo": {
