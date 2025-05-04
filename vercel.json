@@ -22,7 +22,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/$1",
+      "dest": "/",
       "headers": {
         "Cache-Control": "s-maxage=0, stale-while-revalidate=60"
       }
