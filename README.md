@@ -34,6 +34,16 @@ O FURIA Fan BOT é uma aplicação web dedicada aos fãs da FURIA Esports, ofere
 
 . Horários das partidas
 
+## 3. Ranking HLTV
+
+. Ranking da Furia na HLTV
+
+. Top 20 times da HLTV
+
+## 4. ChatBot Furia
+
+. Interações com o Bot
+
 
 ## 🛠️ Configuração Técnica
 ### Estrutura do Projeto
