@@ -3,7 +3,7 @@
 ## 📌 Visão Geral
 O FURIA Fan BOT é uma aplicação web dedicada aos fãs da FURIA Esports, oferecendo informações sobre o time de CS:GO, quizzes interativos e dados atualizados sobre partidas. Desenvolvido com:
 
-. Frontend: Next.js/React
+. Frontend: Vite.js/React
 
 . Backend: Node.js/Express
 
@@ -14,8 +14,6 @@ O FURIA Fan BOT é uma aplicação web dedicada aos fãs da FURIA Esports, ofere
 . Teste seu conhecimento sobre a FURIA
 
 . 5 perguntas com temporizador
-
-. Sistema de pontuação e ranking
 
 . Feedback visual para respostas
 
@@ -36,12 +34,6 @@ O FURIA Fan BOT é uma aplicação web dedicada aos fãs da FURIA Esports, ofere
 
 . Horários das partidas
 
-## 3. Ranking de Jogadores
-. Classificação baseada em pontuação no quiz
-
-. Top 10 jogadores
-
-. Seu histórico pessoal
 
 ## 🛠️ Configuração Técnica
 ### Estrutura do Projeto
@@ -131,6 +123,6 @@ app.use(cors({
 5. Abra um Pull Request
 
 
-Desenvolvido com ❤️ por Yan Nascimento | Twitter | Email
+Desenvolvido com ❤️ por Yan Nascimento | x.com/kaisafadx | yanvictor06@hotmail.com
 
 ⚫ #GoFURIA
