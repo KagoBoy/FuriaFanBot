@@ -1,8 +1,7 @@
 // services/api-jogos.js
 
-const BASE_URL = import.meta.env.MODE === 'production' 
-  ? 'https://furia-fan-bot-git-main-kagoboys-projects.vercel.app' 
-  : 'http://localhost:3001';
+const BASE_URL = 'https://furia-fan-bot-git-main-kagoboys-projects.vercel.app' 
+ 
 
 export const fetchMatches = async (params = {}) => {
   try {
