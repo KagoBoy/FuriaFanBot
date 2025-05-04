@@ -5,9 +5,9 @@
   "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"next dev\" \"node api/index.js\"",
-    "build": "next build",
-    "start": "next start",
+    "start": "node api/index.js",
+    "dev": "concurrently \"vite dev\" \"node api/index\"",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
