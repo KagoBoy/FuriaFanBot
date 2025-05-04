@@ -1,5 +1,9 @@
 // services/api-jogos.js
 
+const BASE_URL = import.meta.env.MODE === 'production' 
+  ? 'https://furia-fan-bot-git-main-kagoboys-projects.vercel.app' 
+  : 'http://localhost:3001';
+
 export const fetchMatches = async (params = {}) => {
   try {
     // Converte os parâmetros em query string formatada corretamente
@@ -16,7 +20,7 @@ export const fetchMatches = async (params = {}) => {
       }
     }
 
-    const response = await fetch(`http://localhost:3001/api/matches?${queryParams.toString()}`);
+    const response = await fetch(`${BASE_URL}/api/matches?${queryParams.toString()}`);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -43,7 +47,7 @@ export const fetchUpcomingMatches = async (params = {}) => {
       }
     }
     
-    const response = await fetch(`http://localhost:3001/api/upcoming-matches?${queryParams.toString()}`);
+    const response = await fetch(`${BASE_URL}/api/upcoming-matches?${queryParams.toString()}`);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

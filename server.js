@@ -8,6 +8,7 @@ const PANDASCORE_TOKEN = "qEhE7ZpYUoddzxd-s3KpGL-EyBoj1nmRcwEjJXCLQiMVuE408-M";
 // Configuração do CORS
 const allowedOrigins = [
   'https://furia-fan-bot-ebon.vercel.app',
+  'https://furia-fan-bot-git-main-kagoboys-projects.vercel.app',
   'http://localhost:3001',
   'http://localhost:5173'
 ];
