@@ -29,7 +29,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className=" hover:bg-yellow-500 rounded-lg p-2 transition duration-300"
+                  className=" hover:bg-yellow-400 rounded-lg p-2 transition duration-300"
                   href="/jogos"
                 >
                   Jogos
@@ -37,7 +37,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className=" hover:bg-yellow-500 rounded-lg p-2 transition duration-300"
+                  className=" hover:bg-yellow-400 rounded-lg p-2 transition duration-300"
                   href="/quiz"
                 >
                   Quiz
@@ -45,7 +45,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className=" hover:bg-yellow-500 rounded-lg p-2 transition duration-300"
+                  className=" hover:bg-yellow-400 rounded-lg p-2 transition duration-300"
                   href="/ranking"
                 >
                   Ranking
