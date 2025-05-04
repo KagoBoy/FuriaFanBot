@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node api/index.js",
-    "dev": "vite",
+    "dev": "vite dev",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
