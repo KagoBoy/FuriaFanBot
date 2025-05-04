@@ -8,7 +8,7 @@ const PANDASCORE_TOKEN = 'qEhE7ZpYUoddzxd-s3KpGL-EyBoj1nmRcwEjJXCLQiMVuE408-M';
 
 // Configuração básica do CORS para permitir requisições do frontend
 app.use(cors({
-  origin: 'http://localhost:5173' // Permite apenas requisições do seu frontend
+  origin: 'https://furia-fan-bot-ebon.vercel.app/' // Permite apenas requisições do seu frontend
 }));
 
 // Rota para obter os dados das partidas

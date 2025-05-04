@@ -1,6 +1,7 @@
 import BackgroundLights from "../../components/BackgroundLights";
 import FuriaChatbot from "../../components/ChatBot/ChatBot";
 import MatchInfo from "../../components/MatchInfo/MatchInfo";
+import logo from "../../assets/logo.png";
 
 
 export default function TelaJogos() {
@@ -14,7 +15,7 @@ export default function TelaJogos() {
         {/* Conteúdo */}
         <header className="flex items-center justify-between w-full mb-10">
           <img
-            src="./src/assets/logo.png"
+            src={logo}
             alt="Logo da Furia"
             className="w-20 h-20"
           />

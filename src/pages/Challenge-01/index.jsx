@@ -1,6 +1,7 @@
 import BackgroundLights from "../../components/BackgroundLights";
 import FuriaChatbot from "../../components/ChatBot/ChatBot";
 import FuriaMatchesSummary from "../../components/MatchInfo/FuriaMatchs";
+import logo from "../../assets/logo.png";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         {/* Conteúdo */}
         <header className="flex items-center justify-between w-full mb-10">
           <img
-            src="./src/assets/logo.png"
+            src={logo}
             alt="Logo da Furia"
             className="w-20 h-20"
           />
