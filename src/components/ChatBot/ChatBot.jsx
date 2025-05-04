@@ -57,7 +57,7 @@ const FuriaChatbot = () => {
           return "Não consegui verificar o próximo jogo agora. Tente novamente mais tarde ou confira no site da FURIA!";
         }
       },
-      keywords: ["pr[oó]x[ií]mo[s] jogo[s]", "quando joga", "pr[oó]xima[s] partida[s]", "calend[aá]rio", "agenda", "datas"]
+      keywords: ["pr[oó]ximo jogo", "pr[oó]ximo[s] jogo[s]", "quando joga", "pr[oó]xima[s] partida[s]", "calend[aá]rio", "agenda", "datas"]
     },
     "títulos": {
       response: "🏆 Principais títulos:\n- ESL Pro League S17 (2023)\n- IEM Dallas (2022)\n- EPL S13 (Top 4)\n- 4x Campeã Brasileira\n\nA FURIA já ganhou mais de $5M em premiações!",

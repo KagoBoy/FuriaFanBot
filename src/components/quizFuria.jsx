@@ -118,7 +118,7 @@ export default function QuizFuria() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 text-center min-h-[40vh] max-h-[40vh] flex flex-col justify-between">
+    <div className="max-w-3xl mx-auto p-6 text-center min-h-[40vh] flex flex-col justify-between">
       <h2 className="text-2xl font-bold mb-4">Quiz FURIA CS:GO</h2>
 
       {quizState === "start" && (
@@ -173,7 +173,7 @@ export default function QuizFuria() {
           {userAnswer !== null && (
             <button
               onClick={nextQuestion}
-              className="bg-yellow-500 text-black px-6 py-2 font-bold rounded hover:bg-red-600 hover:text-white cursor-pointer transition duration-300"
+              className="w-full bg-yellow-500 text-black px-6 py-2 font-bold rounded hover:bg-red-600 hover:text-white cursor-pointer transition duration-300"
             >
               {progress.current < progress.total
                 ? "Próxima Pergunta"
@@ -184,7 +184,7 @@ export default function QuizFuria() {
       )}
 
       {quizState === "results" && (
-        <div className="mb-8"> 
+        <div className="mb-8">
           {randomImage && (
             <div className="mb-6">
               <img
@@ -200,11 +200,10 @@ export default function QuizFuria() {
           <p className="text-lg mb-4">
             Você acertou {results.score} de {results.total} perguntas!
           </p>
-          
 
           <button
             onClick={startQuiz}
-            className="bg-yellow-500 text-black px-6 py-2 font-bold rounded hover:bg-red-600 hover:text-white"
+            className="w-full bg-yellow-500 text-black px-6 py-2 font-bold rounded hover:bg-red-600 hover:text-white cursor-pointer"
           >
             Tentar Novamente
           </button>
