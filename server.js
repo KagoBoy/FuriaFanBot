@@ -3,14 +3,32 @@ import cors from 'cors';
 import axios from 'axios';
 
 const app = express();
-const PANDASCORE_TOKEN = 'qEhE7ZpYUoddzxd-s3KpGL-EyBoj1nmRcwEjJXCLQiMVuE408-M';
+const PANDASCORE_TOKEN = "qEhE7ZpYUoddzxd-s3KpGL-EyBoj1nmRcwEjJXCLQiMVuE408-M";
 
-// Configuração básica do CORS para permitir requisições do frontend
+// Configuração do CORS
+const allowedOrigins = [
+  'https://furia-fan-bot-ebon.vercel.app',
+  'http://localhost:3001',
+  'http://localhost:5173'
+];
+
 app.use(cors({
-  origin: ['https://furia-fan-bot-ebon.vercel.app/', 'http://localhost:3001']
+  origin: allowedOrigins,
+  methods: ['GET', 'OPTIONS']
 }));
 
-// Rota para obter os dados das partidas
+// Middleware adicional para headers CORS
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+// Rota para partidas concluídas
 app.get('/api/matches', async (req, res) => {
   try {
     const response = await axios.get('https://api.pandascore.co/csgo/matches?search[name]=furia&filter[finished]=true', {
@@ -26,6 +44,7 @@ app.get('/api/matches', async (req, res) => {
   }
 });
 
+// Rota para próximas partidas
 app.get('/api/upcoming-matches', async (req, res) => {
   try {
     const response = await axios.get('https://api.pandascore.co/csgo/matches/upcoming?search[name]=FURIA', {
