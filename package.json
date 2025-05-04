@@ -2,18 +2,19 @@
   "name": "furia-fan-bot-api",
   "private": true,
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "concurrently \"next dev\" \"node api/index.js\"",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.9.0",
+    "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "framer-motion": "^12.9.2",

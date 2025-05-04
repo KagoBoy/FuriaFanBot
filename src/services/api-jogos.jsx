@@ -1,6 +1,9 @@
 // services/api-jogos.js
 
-const BASE_URL = 'https://furia-fan-bot-ebon.vercel.app';
+
+const BASE_URL = import.meta.env.MODE === 'production'
+  ? ''  // URL do servidor de produção
+  : 'http://localhost:3000';    
  
 
 export const fetchMatches = async (params = {}) => {
