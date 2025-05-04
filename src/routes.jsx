@@ -12,6 +12,7 @@ function RoutesComponent() {
         <Route path="/jogos" element={<TelaJogos/>} />
         <Route path="/quiz" element={<TelaQuiz/>} />
         <Route path="/ranking" element={<TelaRanking/>} />
+
         </Routes>
     );
 

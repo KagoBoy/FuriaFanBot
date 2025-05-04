@@ -21,12 +21,23 @@
       "dest": "/api/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/",
+      "src": "/assets/(.*)",
       "headers": {
-        "Cache-Control": "s-maxage=0, stale-while-revalidate=60"
+        "Cache-Control": "s-maxage=31536000, immutable"
       }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/index.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
+    } 
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-    
   ]
 }
