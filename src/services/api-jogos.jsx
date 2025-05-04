@@ -1,6 +1,6 @@
 // services/api-jogos.js
 
-const BASE_URL = 'https://furia-fan-bot-ebon.vercel.app/' 
+const BASE_URL = 'https://furia-fan-bot-ebon.vercel.app';
  
 
 export const fetchMatches = async (params = {}) => {
