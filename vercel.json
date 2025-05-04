@@ -9,7 +9,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "cleanUrls": true
       }
     }
 
@@ -21,7 +22,10 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/",
+      "dest": "/dist/$1",
+      "headers": {
+        "Cache-Control": "s-maxage=0, stale-while-revalidate=60"
+      },
       "continue": true
     }
     

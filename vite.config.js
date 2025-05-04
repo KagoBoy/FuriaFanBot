@@ -8,6 +8,8 @@ export default defineConfig({
     tailwindcss()
   ],
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    emptyOutDir: true,
   },
+  base: './'
 })
