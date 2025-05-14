@@ -175,7 +175,7 @@ const FuriaChatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-40 right-40 z-50">
+    <div className="fixed bottom-20 right-20 lg:bottom-40 lg:right-40 z-50">
       {isOpen ? (
         <div className="w-80 h-96 bg-gray-900 border-2 border-yellow-500 rounded-t-lg flex flex-col">
           <div className="bg-yellow-500 text-black p-3 font-bold rounded-t-lg flex justify-between items-center">

@@ -62,3 +62,8 @@ app.get('/api/upcoming-matches', async (req, res) => {
 });
 
 export default app;
+
+/*const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});*/

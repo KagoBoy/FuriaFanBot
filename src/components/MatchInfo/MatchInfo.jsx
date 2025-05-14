@@ -86,20 +86,20 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
             <img 
               src={team1.image_url} 
               alt={`${team1.name} logo`} 
-              className="w-10 h-10 object-contain"
+              className="w-6 h-6 md:w-10 md:h-10 object-contain"
               onError={(e) => e.target.style.display = 'none'} 
             />
             <div className="min-w-0">
-              <div className="font-semibold truncate">{team1.name}</div>
+              <div className="text-sm md:text-2xl font-semibold truncate">{team1.name}</div>
               <div className="text-xs text-gray-400">{team1.acronym || 'N/A'}</div>
             </div>
           </div>
 
           <div className="flex flex-col items-center justify-center w-1/5 px-2">
-            <div className="bg-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-1">MD3</div>
+            <div className="bg-gray-700 px-3 py-1 rounded-full text-xs font-medium mb-1">MD3</div>
             <div className="text-lg font-bold text-gray-300">VS</div>
             <svg 
-              className={`w-5 h-5 text-gray-400 transition-transform duration-200 mt-1 ${isExpanded ? 'rotate-180' : ''}`}
+              className={`w-3 h-3 md:w-5 md:h-5 text-gray-400 transition-transform duration-200 mt-1 ${isExpanded ? 'rotate-180' : ''}`}
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -110,13 +110,13 @@ const MatchItem = ({ tournamentName, matchDate, team1, team2, winnerId, isFinish
 
           <div className={`flex items-center justify-end space-x-3 ${winnerId === team2.id ? 'text-green-400' : 'text-white'} w-2/5`}>
             <div className="min-w-0 text-right">
-              <div className="font-semibold truncate">{team2.name}</div>
+              <div className="text-sm md:text-2xl font-semibold truncate">{team2.name}</div>
               <div className="text-xs text-gray-400">{team2.acronym || 'N/A'}</div>
             </div>
             <img 
               src={team2.image_url} 
               alt={`${team2.name} logo`} 
-              className="w-10 h-10 object-contain"
+              className="w-6 h-6 md:w-10 md:h-10 object-contain"
               onError={(e) => e.target.style.display = 'none'} 
             />
           </div>

@@ -169,36 +169,36 @@ export default function RankingFuria() {
   };
 
   return (
-    <div className="relative z-10 bg-[#0a0a0a] rounded-3xl shadow-[0_0_80px_20px_rgba(255,238,88,0.08)] p-8 w-11/12 max-w-6xl">
-      <div className="bg-gray-800 p-6 rounded-lg mb-8 border-l-4 border-yellow-500">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <div className="mb-4 md:mb-0 flex items-center">
-                <img 
-                    src={rankingData.teams[16].logo}
-                    alt="FURIA" 
-                    className="w-12 h-12 mr-4"
-                    onError={(e) => e.target.src = {defaultLogo}}
-                />
+    <div className="relative z-10 bg-[#0a0a0a] rounded-3xl shadow-[0_0_80px_20px_rgba(255,238,88,0.08)] p-4 md:p-8 w-full md:w-11/12 max-w-6xl mx-auto">
+      <div className="bg-gray-800 p-4 md:p-6 rounded-lg mb-6 border-l-4 border-yellow-500">
+        <div className="flex flex-col">
+          <div className="flex items-center mb-3">
+            <img
+              src={rankingData.teams[16].logo}
+              alt="FURIA"
+              className="w-8 h-8 md:w-12 md:h-12 mr-3"
+              onError={(e) => (e.target.src = defaultLogo)}
+            />
+            <div>
+              <h2 className="text-base md:text-2xl font-bold">
+                <span className="text-yellow-400">
+                  #{rankingData.teams[16].position}
+                </span>{" "}
+                - {rankingData.teams[16].name}
+              </h2>
+              <p className="text-xs md:text-lg text-gray-300">
+                {rankingData.teams[16].points} pontos HLTV
+              </p>
             </div>
-
-            <h2 className="text-2xl font-bold">
-              <span className="text-yellow-400">
-                #{rankingData.teams[16].position}
-              </span>{" "}
-              - {rankingData.teams[16].name}
-            </h2>
-            <p className="text-gray-300">
-              {rankingData.teams[16].points} pontos HLTV
-            </p>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+
+          <div className="grid grid-cols-5 gap-2 md:gap-4">
             {rankingData.teams[16].players.map((player, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gray-700 mx-auto mb-2 flex items-center justify-center text-yellow-400 font-bold">
+                <div className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-700 mx-auto mb-1 flex items-center justify-center text-yellow-400 text-xs md:text-base font-bold">
                   {player.charAt(0).toUpperCase()}
                 </div>
-                <p className="text-sm font-medium">{player}</p>
+                <p className="text-xs font-medium truncate">{player}</p>
               </div>
             ))}
           </div>
@@ -208,12 +208,14 @@ export default function RankingFuria() {
       {/* Tabela de ranking */}
       <div className="overflow-x-auto">
         <table className="w-full text-white">
-          <thead className="bg-gray-700">
-            <tr>
-              <th className="px-6 py-3 text-left">Posição</th>
-              <th className="px-6 py-3 text-left">Time</th>
-              <th className="px-6 py-3 text-left">Pontos</th>
-              <th className="px-6 py-3 text-left">Jogadores</th>
+          <thead className="bg-gray-700 hidden md:table-header-group">
+            <tr className="text-xs md:text-base">
+              <th className="px-3 py-2 md:px-6 md:py-3 text-left">#</th>
+              <th className="px-3 py-2 md:px-6 md:py-3 text-left">Time</th>
+              <th className="px-3 py-2 md:px-6 md:py-3 text-left">Pontos</th>
+              <th className="px-3 py-2 md:px-6 md:py-3 text-left hidden md:table-cell">
+                Jogadores
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-600">
@@ -224,23 +226,31 @@ export default function RankingFuria() {
                   team.name === "FURIA" ? "bg-gray-800" : ""
                 }`}
               >
-                <td className="px-6 py-4">#{team.position}</td>
-                <td className="px-6 py-4 font-medium flex items-center">
-                  <img
-                    src={team.logo || {defaultLogo}}
-                    alt={`${team.name} logo`}
-                    className="w-8 h-8 mr-3 object-contain"
-                    onError={(e) => (e.target.src = {defaultLogo})}
-                  />
-                  {team.name}
+                <td className="text-sm md:text-base px-3 py-2 md:px-6 md:py-4 align-top md:align-middle">
+                  #{team.position}
                 </td>
-                <td className="px-6 py-4">{team.points}</td>
-                <td className="px-6 py-4">
-                  <div className="flex flex-wrap gap-2">
+                <td className="px-3 py-2 md:px-6 md:py-4 font-medium align-top md:align-middle">
+                  <div className="flex items-start">
+                    <img
+                      src={team.logo || defaultLogo}
+                      alt={`${team.name} logo`}
+                      className="w-4 h-4 md:w-6 md:h-6 mr-2 mt-1 flex-shrink-0 object-contain"
+                      onError={(e) => (e.target.src = defaultLogo)}
+                    />
+                    <span className="text-base md:text-2xl truncate max-w-[115px] md:max-w-none">
+                      {team.name}
+                    </span>
+                  </div>
+                </td>
+                <td className="text-sm md:text-base px-3 py-2 md:px-6 md:py-4 align-top md:align-middle">
+                  {team.points}
+                </td>
+                <td className="px-3 py-2 md:px-6 md:py-4">
+                  <div className="flex flex-wrap gap-1 md:gap-2">
                     {team.players.map((player, i) => (
                       <span
                         key={i}
-                        className="text-sm bg-gray-600 px-2 py-1 rounded"
+                        className="text-xs bg-gray-600 px-1 py-0.5 md:px-2 md:py-1 rounded"
                       >
                         {player}
                       </span>
