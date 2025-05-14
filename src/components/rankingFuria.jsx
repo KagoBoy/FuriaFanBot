@@ -169,8 +169,8 @@ export default function RankingFuria() {
   };
 
   return (
-    <div className="relative z-10 bg-[#0a0a0a] rounded-3xl shadow-[0_0_80px_20px_rgba(255,238,88,0.08)] p-4 md:p-8 w-full md:w-11/12 max-w-6xl mx-auto">
-      <div className="bg-gray-800 p-4 md:p-6 rounded-lg mb-6 border-l-4 border-yellow-500">
+    <div className="relative z-10 bg-[#0a0a0a] rounded-3xl shadow-[0_0_80px_20px_rgba(255,238,88,0.08)] p-4 md:p-8 w-full max-[400px]:w-[95%] md:w-11/12 max-w-6xl mx-auto">
+      <div className="bg-g------------------------ray-800 p-4 md:p-6 rounded-lg mb-6 border-l-4 border-yellow-500">
         <div className="flex flex-col">
           <div className="flex items-center mb-3">
             <img
@@ -192,7 +192,7 @@ export default function RankingFuria() {
             </div>
           </div>
 
-          <div className="grid grid-cols-5 gap-2 md:gap-4">
+          <div className="grid grid-cols-5 md:gap-4 gap-2">
             {rankingData.teams[16].players.map((player, index) => (
               <div key={index} className="text-center">
                 <div className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-700 mx-auto mb-1 flex items-center justify-center text-yellow-400 text-xs md:text-base font-bold">
@@ -237,7 +237,7 @@ export default function RankingFuria() {
                       className="w-4 h-4 md:w-6 md:h-6 mr-2 mt-1 flex-shrink-0 object-contain"
                       onError={(e) => (e.target.src = defaultLogo)}
                     />
-                    <span className="text-base md:text-2xl truncate max-w-[115px] md:max-w-none">
+                    <span className="text-base md:text-2xl truncate max-w-[115px] max-[400px]:max-w-[60px] md:max-w-none">
                       {team.name}
                     </span>
                   </div>
