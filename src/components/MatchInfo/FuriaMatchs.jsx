@@ -46,8 +46,8 @@ const FuriaMatchesSummary = () => {
   const processLastMatch = (match) => {
     if (!match) return null;
     
-    const team1Score = match.results?.find(r => r.team_id === match.furia_id)?.score || '0';
-    const team2Score = match.results?.find(r => r.team_id === match.opponents?.find(o => !o.opponent.name.includes('FURIA'))?.opponent.id)?.score || '0';
+    const team1Score = match.results?.find(r => r.team_id === 124530 || r.team_id === 129384)?.score;
+    const team2Score = match.results?.find(r => r.team_id === match.opponents?.find(o => !o.opponent.name.includes('FURIA'))?.opponent.id)?.score;
     
     return {
       team1: 'FURIA',
